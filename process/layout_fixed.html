@@ -7,9 +7,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='skrollr.min.js') }}"></script>
     -->
-    <link rel="stylesheet" type="text/css"href="/Users/karen/pyprojects/prk_story/prk_story/static/style.css">
+    <link rel="stylesheet" type="text/css"href="/Users/karen/dev/prk_story/prk_story/static/style.css">
     <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
-    <script type="text/javascript" src="/Users/karen/pyprojects/prk_story/prk_story/static/skrollr.min.js"></script>
+    <script type="text/javascript" src="/Users/karen/dev/prk_story/prk_story/static/skrollr.min.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         <div class="slide1">
             <h1>A Parking Story</h1>
-            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/pyprojects/prk_story/prk_story/static/car.png">
+            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/dev/prk_story/prk_story/static/car.png">
             <!--<img src="{{ url_for('static', filename='car.png') }}">-->
          </div>
 
@@ -27,7 +27,7 @@
 
         <div class="slide1" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
             <!--<img style="width:30em; height:auto;" src="{{url_for('static', filename='diagram.png') }}">-->
-            <div id="illo2"> <img style="width:100%; height:auto;" src="/Users/karen/pyprojects/prk_story/prk_story/static/diagram.png"></div>
+            <div id="illo2"> <img style="width:100%; height:auto;" src="/Users/karen/dev/prk_story/prk_story/static/diagram.png"></div>
             <h3>...which represents {{ prk_ratio *100 | round(2,'floor') }} percent of the entire city!</h2>
         </div>
 
@@ -38,7 +38,7 @@
         <div class="slide1" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
             <h3>{{ total_stallct | int() }} parking stalls could yield {{ possible_apt | int() }} studio apts*</h3>
             <!--<img style="padding-top:2em; padding-bottom:2em;" src="{{url_for('static', filename='house.svg') }}">-->
-            <img id="illo3" src="/Users/karen/pyprojects/prk_story/prk_story/static/house.svg">
+            <img id="illo3" src="/Users/karen/dev/prk_story/prk_story/static/house.svg">
             <h3>Support public transportation and sustainable urbanism.</h3>
         </div>
 
