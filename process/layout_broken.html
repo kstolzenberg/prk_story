@@ -1,0 +1,78 @@
+<!--http://stackoverflow.com/questions/24228797/using-css-translate-causes-space-between-divs-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Parking Story - Broken</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <!--flask links
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='skrollr.min.js') }}"></script>
+    -->
+    <!--local links for testing-->
+    <link rel="stylesheet" type="text/css"href="/Users/karen/pyprojects/prk_story/prk_story/static/style.css">
+    <script type="text/javascript" src="/Users/karen/pyprojects/prk_story/prk_story/static/skrollr.min.js"></script>
+</head>
+
+<body>
+    <div id="skrollr-body">
+
+    <div class="slide1">
+        <h1>A Parking Story</h1>
+        <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/pyprojects/prk_story/prk_story/static/car.png">
+        <!--<img src="{{ url_for('static', filename='car.png') }}">-->
+    </div>
+
+    <div class="slide2" id="backgdimg" data-10p="transform:translate(0,0%);" data-33p="transform:translate(0,-50%);">
+        <h3>San Francisco has {{ total_stallct | int() }} public parking spots*</h2>
+    </div>
+
+    <div class="slide1" data-44p="transform:translate(0,0%);" data-66p="transform:translate(0,-90%);">
+        <!--<img style="width:30em; height:auto;" src="{{url_for('static', filename='diagram.png') }}">-->
+        <div id="illo2"> <img style="width:100%; height:auto;" src="/Users/karen/pyprojects/prk_story/prk_story/static/diagram.png"></div>
+        <h3>...which represents {{ prk_ratio *100 | round(2,'floor') }} percent of the entire city!</h2>
+    </div>
+
+    <div class="slide2" data-500="transform:translate(0,0%);" data-800="transform:translate(0,-90%);">
+        <h2>What if this space was given back to the city?</h2>
+    </div>
+    
+    <!--this scroll don't work!1200/1600 is ok-->
+    <div class="slide1" data-1100="transform:translate(0,0%);" data-1400="transform:translate(0,-120%);">
+        <h3>{{ total_stallct | int() }} parking stalls could yield {{ possible_apt | int() }} studio apts*</h3>
+        <!--<img style="padding-top:2em; padding-bottom:2em;" src="{{url_for('static', filename='house.svg') }}">-->
+        <img id="illo3" src="/Users/karen/pyprojects/prk_story/prk_story/static/house.svg">
+        <h3>Support public transportation and sustainable urbanism.</h3>
+    </div>
+    
+    <!--this scroll don't work!1000/2000 is ok  WHY DOES THIS ONE HAVE A GAP BELOW?-->
+     <div class="slide2"data-900="transform:translate(0,0%);" data-1800="transform:translate(0,-120%);">
+        <div>
+        <h2>*Method</h2>
+        <p>Public parking includes public <a href="https://data.sfgov.org/Transportation/On-street-Parking-Census/3gg2-z57m">on-street</a> and <a href="https://data.sfgov.org/Transportation/Off-Street-parking-lots-and-parking-garages/uupn-yfaw">off-street</a> counts from <a href="https://data.sfgov.org/">SF OpenData</a>. This count does not include code-required private parking for commerical or residential uses.</p>
+
+        <p>Parking stall size is modeled as 9&rsquo;x18&rsquo; per <a href="http://goo.gl/YrFGEI">ADA minimums.</a> Parking area model does not include car access lanes or additional accessory parking areas. San Francisco County area referenced from <a href="http://quickfacts.census.gov/qfd/states/06/0667000.html">US Census Bureau</a>.</p>
+
+        <p>Housing model references <a href="http://my.paragon-re.com/Docs/General/SixtyFortyImages/Asking-Rent_per-SqFt_by-BRs.jpg">2013 Paragon Real Estate analysis</a> and does not include typical residential accessory areas.  Not all of the parking areas may be suitable for residential development.</p>
+        
+        <p>Built on <a href="https://www.heroku.com/">Heroku</a> with <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://plotdevice.io/">PlotDevice</a> and <a href="http://prinzhorn.github.io/skrollr/">Skrollr</a> :).</p>
+        </div>
+
+        <div class="nav">
+            <a style="padding-left:2em;" class="nav_link" href="About.html">About</a>
+            <div style=""><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <a style="padding-right:2em;" class="nav_link" href="layout.html">Top</a>
+        </div>
+    </div> 
+    </div>   
+
+    <script type="text/javascript">
+        var s = skrollr.init({forceHeight: false});
+        smoothScrolling=true;
+    </script>
+
+</body>
+
+</html>

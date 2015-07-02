@@ -1,0 +1,11 @@
+size(512, 512)
+background(1)
+
+color(mode=RGB, range=255)
+stroke(1)
+fill(120,76,0,50)
+    
+rect(100,100,100,100)
+rect(150,150,100,100)
+
+

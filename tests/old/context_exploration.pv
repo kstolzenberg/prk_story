@@ -1,0 +1,11 @@
+import random
+import time
+
+svg = ximport("svg")
+sf_paths = svg.parse(open('/Users/karen/pyprojects/prk_story/tests/sf36.svg').read())
+sf_path = sf_paths[0]
+
+
+sf_path.translate(200,200)
+drawpath(sf_path.copy())
+

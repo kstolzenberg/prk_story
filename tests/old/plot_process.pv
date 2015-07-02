@@ -1,0 +1,36 @@
+size(600, 600)
+color(mode=RGB, range=255)
+background(0,50)
+
+clear(all)
+
+svg = ximport("svg")
+sf_paths = svg.parse(open('/Users/karen/pyprojects/prk_story/tests/sf36.svg').read())
+sf_path = sf_paths[0]
+
+
+# locate the centroid
+drawpath(sf_paths[0].copy(), fill=("white",.5), stroke="black", strokewidth=.5) # location before translation
+arc(WIDTH/2, HEIGHT/2, 10) # true canvas center
+arc(sf_path.center.x, sf_path.center.y, 10, fill="red") # true path center
+
+
+# this moved the entire svg by upper corner - sf_path.translate(WIDTH/2, HEIGHT/2)
+# you can always find the available commands for something by calling <dir> also <type> will let you know what you are working with
+# print dir(sf_path)print sf_path.center
+arc(sf_path.center.x, sf_path.center.y+20, 10) # ideal center
+
+# from input coordinates - return ideal centroid
+def sf_correction(path, x, y):
+    return x-path.center.x, y-path.center.y-40
+
+print sf_correction(sf_path, 250, 250)
+
+# * is an expansion. it will explode any data structure. if you just pass the function, translate can't find the ordered pairs, it just finds a single ordered pair
+# translate to correct center and draw
+sf_path.translate(*sf_correction(sf_path, WIDTH/2, HEIGHT/2))
+sf_path.scale(2.0)
+drawpath(sf_paths[0].copy(), fill=("white",.5), stroke="black", strokewidth=.5)
+
+export("/Users/karen/pyprojects/prk_story/tests/sf_paths_process.pdf")
+

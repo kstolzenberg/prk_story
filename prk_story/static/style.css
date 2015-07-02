@@ -1,0 +1,118 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+
+body {
+    font-family: 'Roboto', Verdana, sans-serif;
+    color:#ffffff;
+    font-size: 16px;
+    background-color:#BEC8C8;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.nav {
+    width:100%; 
+    display: flex;
+    align-items:flex-end;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-top:7em;
+    margin-bottom:1em;
+}
+
+div {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.slide1 {
+    width:100%;
+    height:600px;
+    background-color:#BEC8C8;
+}
+
+.slide2{
+    width:100%;
+    height:600px;
+    background-color:#A4ADAD;
+}
+
+#backgdimg{
+    background-image: url("parking.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.skrollable {margin:0; padding:0;}
+
+p {margin-right: 2em;
+    margin-left: 2em;}
+
+#skrollr-body {
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+#illo2 {display:block;width:32em; height:32em;}
+#illo3 {padding-top:2em; padding-bottom:2em;}
+
+a {text-decoration:underline; color:#ffffff}
+
+a.nav_link {
+    font-family: 'Hammersmith One', Arial Bold, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    text-decoration:none;
+}
+
+h1 {
+    font-family: 'Hammersmith One', Arial Bold, sans-serif;
+    font-weight: normal;
+    font-size: 4em; /*at 16px, 72pt is 4em*/
+}
+
+h2 {
+    font-family: 'Hammersmith One', Arial Bold, sans-serif;
+    font-weight: normal;
+    font-size: 3.5em;
+    -webkit-margin-after:.5em;
+}
+
+h3 {
+    font-family: 'Hammersmith One', Arial Bold, sans-serif;
+    font-weight: normal;
+    font-size: 2.25em;
+}
+
+/*use this to check & style for smaller screens. iphone & tablet*/
+@media (min-width: 320px) and (max-width: 736px) {
+    .slide1 {
+        height:400px;
+    }
+
+    .slide2 {
+        height:400px;
+    }
+
+    .nav {
+    margin-bottom:2em;
+    }
+
+    #illo2 {display: block; width:25em; height:25em;}
+    #illo3{padding: none;}
+
+    h3 {font-family: 'Hammersmith One', Arial Bold, sans-serif;
+    font-weight: normal;
+    font-size: 1.75em;}
+
+    body {
+    font-size: .75em;
+    }
+
+}
+

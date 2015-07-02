@@ -1,0 +1,30 @@
+size(512, 512)
+color(mode=RGB, range=255) # set ur color mode first!
+background(255)
+stroke(50)
+fill(5,119,136,100)
+
+svg = ximport("svg")
+# note arcs will give you circles about a center point!! no close necessary. only a section if you give it a range
+origin = Point(WIDTH/2, HEIGHT/2)
+
+reset()
+# clip is the mask!!! I don't get this fill syntax?? terrible docs.
+with clip(arc(origin.x, origin.y, 100, fill=('white', .5))):
+    arc(WIDTH/2, HEIGHT/2, 200)
+    arc(WIDTH/2, HEIGHT/2, 4,fill='yellow')
+    
+    # set geometry in terms of percentages
+    geometry(PERCENT)
+    newPt = origin.coordinates(200, .05)
+    arc(newPt.x, newPt.y, 4, fill='red')
+    pt1 = origin.coordinates(200, 0)
+    arc(pt1.x, pt1.y, 4, fill='blue')
+        
+        
+    total_ratio = 0.05
+    # syntax = center pts, radius = ht, range = arc lenth, close will draw the rays
+    rotate(.25) # rotate our 5% wedge around
+    arc(origin.x, origin.y, 125, range=total_ratio, fill='orange', close=True)
+        
+    
