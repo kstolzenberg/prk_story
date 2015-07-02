@@ -6,8 +6,8 @@
     <!--flask links
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='skrollr.min.js') }}"></script>
-    -->
     <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+    -->
     <!--local links-->
     <link rel="stylesheet" type="text/css"href="/Users/karen/dev/prk_story/prk_story/static/style.css">
     <script type="text/javascript" src="/Users/karen/dev/prk_story/prk_story/static/skrollr.min.js"></script>
@@ -16,35 +16,35 @@
 <body>
     <div id="skrollr-body">
 
-        <!--all slides need the animation!-->
-        <div class="slide1" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+        <!--all slides need the animation! the space error came from absolute positioning-->
+        <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h1>A Parking Story</h1>
-            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/dev/prk_story/prk_story/static/car.png">
+            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/dev/prk_story/prk_story/static/car.svg">
             <!--<img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="{{ url_for('static', filename='car.png') }}">-->
          </div>
 
-         <div class="slide2" id="backgdimg" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+         <div class="slide2" id="backgdimg" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h3>San Francisco has {{ total_stallct | int() }} public parking spots*</h2>
          </div>
 
-        <div class="slide1" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+        <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
              <div id="illo2"><!--<img style="width:100%; height:auto;" src="{{url_for('static', filename='diagram.png') }}">-->
             <img style="width:100%; height:auto;" src="/Users/karen/dev/prk_story/prk_story/static/diagram.png"></div>
             <h3>...which represents {{ prk_ratio *100 | round(2,'floor') }} percent of the entire city!</h2>
         </div>
 
-        <div class="slide2" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+        <div class="slide2" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h2>What if this space was given back to the city?</h2>
         </div>
 
-        <div class="slide1" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+        <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h3>{{ total_stallct | int() }} parking stalls could yield {{ possible_apt | int() }} studio apts*</h3>
             <!--<img id="illo3" src="{{url_for('static', filename='house.svg') }}">-->
             <img id="illo3" src="/Users/karen/dev/prk_story/prk_story/static/house.svg">
             <h3>Support public transportation and sustainable urbanism.</h3>
         </div>
 
-        <div class="slide2" data-top="transform: translate(0px,0px)" data--250-top="transform: translate(0px,200px)">
+        <div class="slide2" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <div>
             <h2>*Method</h2>
             <p>Public parking includes public <a href="https://data.sfgov.org/Transportation/On-street-Parking-Census/3gg2-z57m">on-street</a> and <a href="https://data.sfgov.org/Transportation/Off-Street-parking-lots-and-parking-garages/uupn-yfaw">off-street</a> counts from <a href="https://data.sfgov.org/">SF OpenData</a>. This count does not include code-required private parking for commerical or residential uses.</p>
@@ -57,11 +57,11 @@
             </div>
 
             <div class="nav">
-            <a style="padding-left:2em;" class="nav_link" href="About.html">About</a>
+            <a style="padding-left:2em;" class="nav_link" href="about.html">About</a>
             <div style=""><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </div>
-            <a style="padding-right:2em;" class="nav_link" href="layout.html">Top</a>
+            <a style="padding-right:2em;" class="nav_link" href="index.html">Top</a>
             </div>
         </div>
     </div>   

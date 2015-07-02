@@ -74,7 +74,7 @@ def parking():
 
     export("/Users/karen/pyprojects/prk_story/prk_story/static/diagram.png")
 
-    return render_template('layout.html',
+    return render_template('index.html',
                             total_stallct = total_stallct,
                             total_prk_area = total_prk_area,
                             prk_ratio = prk_ratio,
