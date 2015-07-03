@@ -14,8 +14,8 @@ print "time to import drawing library: %g" % (time.time()-start)
 
 
 app = Flask(__name__)
-@app.route('/')
 
+@app.route('/')
 def parking():
     r = requests.get("https://data.sfgov.org/resource/uupn-yfaw.json") # these are offstreet from 2011
     p = requests.get("https://data.sfgov.org/resource/3gg2-z57m.json") # these are on-street from 2008 - onward
@@ -84,6 +84,13 @@ def parking():
                             prk_ratio = prk_ratio,
                             possible_apt = possible_apt
                             ) 
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
