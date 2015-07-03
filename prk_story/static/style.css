@@ -15,9 +15,9 @@ body {
     width:100%;
     display: flex;
     /*note flex-end needs 100% height and webkit prefix*/
-    align-items:flex-end;
+    -webkit-align-items:flex-end;
     flex-direction:row;
-    justify-content:space-between;
+    -webkit-justify-content:space-between;
     margin-top:7em;
     margin-bottom:1em;
 }
@@ -25,8 +25,8 @@ body {
 div {
     display: flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    -webkit-justify-content:center;
+    -webkit-align-items:center;
 
 }
 
