@@ -1,6 +1,7 @@
+# ! heroku doesn't have obj-c and can't import plotdevice. this branch comments out the dynamic image creation and serves a static diagram.
 from flask import Flask
 from flask import render_template
-from flask import url_for
+
 import requests
 import json
 import time
@@ -8,7 +9,7 @@ import os
 
 start = time.time()
 
-from plotdevice import *
+# from plotdevice import *
 print "time to import drawing library: %g" % (time.time()-start)
 
 
@@ -43,39 +44,39 @@ def parking():
     possible_apt = (total_prk_sf / 511) # average studio size is 511 sf per Paragon
 
     # plotdevice drawing
-    size(600,600)
-    color(mode=RGB, range=255)
-    background(None)
+    # size(600,600)
+    # color(mode=RGB, range=255)
+    # background(None)
 
-    svg = ximport("svg")
+    # svg = ximport("svg")
     # it can only find full path? how will this scale for heroku? does not like url_for
-    sf_paths = svg.parse(open("prk_story/static/sf36.svg").read())
-    sf_path = sf_paths[0]
+    # sf_paths = svg.parse(open("prk_story/static/sf36.svg").read())
+    # sf_path = sf_paths[0]
 
-    def sf_correction(path, x, y):
-        x_offset = 0
-        y_offset = -30
-        return x-path.center.x+x_offset, y-path.center.y+y_offset
+    # def sf_correction(path, x, y):
+    #     x_offset = 0
+    #     y_offset = -30
+    #     return x-path.center.x+x_offset, y-path.center.y+y_offset
 
-    sf_path.translate(*sf_correction(sf_path, WIDTH/2, HEIGHT/2))
-    sf_path.scale(3)
+    # sf_path.translate(*sf_correction(sf_path, WIDTH/2, HEIGHT/2))
+    # sf_path.scale(3)
 
-    drawpath(sf_path.copy(), fill=("white", 1))
+    # drawpath(sf_path.copy(), fill=("white", 1))
 
-    with clip(sf_path):
-        geometry(PERCENT)
-        total_ratio = prk_ratio
-        rotate(.17)
-        arc(WIDTH/2, (HEIGHT/2)+30, 275, range=total_ratio, fill=('red',.5), close=True)
+    # with clip(sf_path):
+    #     geometry(PERCENT)
+    #     total_ratio = prk_ratio
+    #     rotate(.17)
+    #     arc(WIDTH/2, (HEIGHT/2)+30, 275, range=total_ratio, fill=('red',.5), close=True)
 
-    reset()
-    color(mode=RGB, range=255)
-    fill(90)
-    text("The Rest of San Francisco",140,450,fontsize=16,family="Hammersmith One")
-    text("Parking",392,190,fontsize=12,family="Hammersmith One")
+    # reset()
+    # color(mode=RGB, range=255)
+    # fill(90)
+    # text("The Rest of San Francisco",140,450,fontsize=16,family="Hammersmith One")
+    # text("Parking",392,190,fontsize=12,family="Hammersmith One")
 
     
-    export("prk_story/static/diagram.png")
+    # export("prk_story/static/diagram.png")
 
     return render_template('index.html',
                             total_stallct = total_stallct,
