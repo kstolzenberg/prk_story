@@ -1,17 +1,19 @@
-from flask import Flask 
+from flask import Flask
 from flask import render_template
+from flask import url_for
 import requests
 import json
 import time
+import os
 
 start = time.time()
 
-from plotdevice import * 
+from plotdevice import *
 print "time to import drawing library: %g" % (time.time()-start)
 
 
 app = Flask(__name__)
-@app.route('/parking')
+@app.route('/')
 
 def parking():
     r = requests.get("https://data.sfgov.org/resource/uupn-yfaw.json") # these are offstreet from 2011
@@ -46,8 +48,8 @@ def parking():
     background(None)
 
     svg = ximport("svg")
-    # it can only find full path? how will this scale for heroku?
-    sf_paths = svg.parse(open('/Users/karen/pyprojects/prk_story/prk_story/static/sf36.svg').read())
+    # it can only find full path? how will this scale for heroku? does not like url_for
+    sf_paths = svg.parse(open("prk_story/static/sf36.svg").read())
     sf_path = sf_paths[0]
 
     def sf_correction(path, x, y):
@@ -72,7 +74,8 @@ def parking():
     text("The Rest of San Francisco",140,450,fontsize=16,family="Hammersmith One")
     text("Parking",392,190,fontsize=12,family="Hammersmith One")
 
-    export("/Users/karen/pyprojects/prk_story/prk_story/static/diagram.png")
+    
+    export("prk_story/static/diagram.png")
 
     return render_template('index.html',
                             total_stallct = total_stallct,

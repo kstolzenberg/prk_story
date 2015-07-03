@@ -3,14 +3,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>A Parking Story</title>
-    <!--flask links
+    <!--flask links-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='skrollr.min.js') }}"></script>
     <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
-    -->
-    <!--local links-->
+    <!--local links
     <link rel="stylesheet" type="text/css"href="/Users/karen/dev/prk_story/prk_story/static/style.css">
-    <script type="text/javascript" src="/Users/karen/dev/prk_story/prk_story/static/skrollr.min.js"></script>
+    <script type="text/javascript" src="/Users/karen/dev/prk_story/prk_story/static/skrollr.min.js"></script>-->
 </head>
 
 <body>
@@ -19,8 +18,8 @@
         <!--all slides need the animation! the space error came from absolute positioning-->
         <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h1>A Parking Story</h1>
-            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/dev/prk_story/prk_story/static/car.svg">
-            <!--<img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="{{ url_for('static', filename='car.png') }}">-->
+            <!--<img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="/Users/karen/dev/prk_story/prk_story/static/car.svg">-->
+            <img data-0="transform:translate(-300%,0);" data-300="transform:tranlate(250%,0);"  style="width:10em; padding-top:1em;" src="{{ url_for('static', filename='car.svg') }}">
          </div>
 
          <div class="slide2" id="backgdimg" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
@@ -28,9 +27,9 @@
          </div>
 
         <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
-             <div id="illo2"><!--<img style="width:100%; height:auto;" src="{{url_for('static', filename='diagram.png') }}">-->
-            <img style="width:100%; height:auto;" src="/Users/karen/dev/prk_story/prk_story/static/diagram.png"></div>
-            <h3>...which represents {{ prk_ratio *100 | round(2,'floor') }} percent of the entire city!</h2>
+             <div id="illo2"><img style="width:100%; height:auto;" src="{{url_for('static', filename='diagram.png')}}">
+            <!--<img style="width:100%; height:auto;" src="/Users/karen/dev/prk_story/prk_story/static/diagram.png">--></div>
+            <h3>...which represents {{ (prk_ratio | round(3,'floor'))*100 }}% of the entire city!</h2>
         </div>
 
         <div class="slide2" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
@@ -39,8 +38,8 @@
 
         <div class="slide1" data-top="transform: translate(0px,0px)" data--300-top="transform: translate(0px,200px)">
             <h3>{{ total_stallct | int() }} parking stalls could yield {{ possible_apt | int() }} studio apts*</h3>
-            <!--<img id="illo3" src="{{url_for('static', filename='house.svg') }}">-->
-            <img id="illo3" src="/Users/karen/dev/prk_story/prk_story/static/house.svg">
+            <img id="illo3" src="{{url_for('static', filename='house.svg') }}">
+            <!--<img id="illo3" src="/Users/karen/dev/prk_story/prk_story/static/house.svg">-->
             <h3>Support public transportation and sustainable urbanism.</h3>
         </div>
 
