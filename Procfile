@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath app prk_story:app --log-file=-
+web: gunicorn --prk_story app prk_story:app --log-file=-
