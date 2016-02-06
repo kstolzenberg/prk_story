@@ -13,7 +13,7 @@ background(0,75)
 clear(all)
 
 svg = ximport("svg")
-sf_paths = svg.parse(open('/Users/karen/pyprojects/prk_story/tests/sf36.svg').read())
+sf_paths = svg.parse(open('/Users/karen/dev/prk_story/process/sf36.svg').read())
 sf_path = sf_paths[0] # there is a single path in here so we select just that one!
 
 def sf_correction(path, x, y):
